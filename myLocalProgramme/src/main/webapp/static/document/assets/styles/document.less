@@ -1,0 +1,38 @@
+@import "../../../../assets/styles/variable";
+/*demo样式*/
+.navbar{
+  margin: 0;
+}
+.navbar-default{
+  background-color: @theme-color;
+  .navbar-text{
+    color: #fff;
+  }
+}
+.doc-container{
+  padding-top: 50px;
+}
+.doc-sidebar{
+  width: 210px;
+  height: 100%;
+  position: fixed;
+  overflow-y: auto;
+  margin-right: -100%;
+  border-right: 1px solid @border-color;
+  background-color: @bg-gray-color;
+  >.list-group{
+    >.list-group-item{
+      background-color: #eee;
+      border-right: 0;
+      &.active{
+        background-color: @theme-color-lighten;
+        border-color: @theme-color-lighten;
+        color: #fff;
+      }
+    }
+  }
+}
+.doc-content{
+  margin-left: 210px;
+  padding: 20px;
+}

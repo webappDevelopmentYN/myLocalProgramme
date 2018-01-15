@@ -1,0 +1,88 @@
+/**
+** variable created by wuhaiying **
+**/
+body {
+  font-family: "Microsoft Yahei";
+}
+.ui-popup {
+  position: absolute;
+  font-family: 'microsoft yahei';
+  display: none;
+}
+.ui-popup:focus {
+  outline: 0;
+}
+.ui-popup-show {
+  display: block;
+}
+.ui-bubble {
+  position: relative;
+  background: rgba(253, 248, 222, 0.9);
+  border: 1px solid rgba(206, 157, 72, 0.7);
+  color: #CD9C4F;
+  outline: 0;
+  border-radius: 3px;
+}
+.ui-bubble:before,
+.ui-bubble:after {
+  content: '';
+  position: absolute;
+  display: none;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  border: 5px dashed transparent;
+}
+.ui-popup-anchor .ui-bubble:before,
+.ui-popup-anchor .ui-bubble:after {
+  display: block;
+}
+.ui-popup-top .ui-bubble:before,
+.ui-popup-bottom .ui-bubble:before,
+.ui-popup-top .ui-bubble:after,
+.ui-popup-bottom .ui-bubble:after {
+  left: 50%;
+  margin-left: -5px;
+}
+.ui-popup-top .ui-bubble:before {
+  bottom: -10px;
+  border-top: 5px solid #cd9c4f;
+}
+.ui-popup-top .ui-bubble:after {
+  bottom: -9px;
+  border-top: 5px solid #fdf8df;
+}
+.ui-popup-bottom .ui-bubble:before {
+  top: -10px;
+  border-bottom: 5px solid #cd9c4f;
+}
+.ui-popup-bottom .ui-bubble:after {
+  top: -9px;
+  border-bottom: 5px solid #fdf8df;
+}
+.ui-popup-left .ui-bubble:before,
+.ui-popup-right .ui-bubble:before,
+.ui-popup-left .ui-bubble:after,
+.ui-popup-right .ui-bubble:after {
+  top: 50%;
+  margin-top: -5px;
+}
+.ui-popup-left .ui-bubble:before {
+  right: -10px;
+  border-left: 5px solid #cd9c4f;
+}
+.ui-popup-left .ui-bubble:after {
+  right: -9px;
+  border-left: 5px solid #fdf8df;
+}
+.ui-popup-right .ui-bubble:before {
+  left: -10px;
+  border-right: 5px solid #cd9c4f;
+}
+.ui-popup-right .ui-bubble:after {
+  left: -9px;
+  border-right: 5px solid #fdf8df;
+}
+.ui-bubble-content {
+  padding: 5px;
+}

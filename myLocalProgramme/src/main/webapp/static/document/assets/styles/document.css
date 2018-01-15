@@ -1,0 +1,38 @@
+/**
+** variable created by wuhaiying **
+**/
+/*demo样式*/
+.navbar {
+  margin: 0;
+}
+.navbar-default {
+  background-color: #12b5b0;
+}
+.navbar-default .navbar-text {
+  color: #fff;
+}
+.doc-container {
+  padding-top: 50px;
+}
+.doc-sidebar {
+  width: 210px;
+  height: 100%;
+  position: fixed;
+  overflow-y: auto;
+  margin-right: -100%;
+  border-right: 1px solid #ddd;
+  background-color: #f5f5f5;
+}
+.doc-sidebar > .list-group > .list-group-item {
+  background-color: #eee;
+  border-right: 0;
+}
+.doc-sidebar > .list-group > .list-group-item.active {
+  background-color: #14ccc7;
+  border-color: #14ccc7;
+  color: #fff;
+}
+.doc-content {
+  margin-left: 210px;
+  padding: 20px;
+}

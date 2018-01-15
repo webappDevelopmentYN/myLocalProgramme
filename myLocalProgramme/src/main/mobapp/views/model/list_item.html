@@ -1,0 +1,157 @@
+<ion-view>
+    <ion-header-bar class="bar-theme">
+        <div class="buttons">
+            <a class="button" class="back-button" type="button" href="#home">返回</a>
+        </div>
+        <h1 class="title">list-item</h1>
+    </ion-header-bar>
+    <ion-content>
+        <div class="week">
+            <div class="list">
+                <div class="item">
+                    默认左边边框
+                </div>
+            </div>
+        </div>
+        <div class="list">
+            <div class="item item-title-divider">
+                <div class="pull-left">高度为70px,右边有一个按钮</div>
+                <div class="pull-right">
+                    <i class="ion-arrow-down-b"></i>
+                </div>
+            </div>
+            <div class="item item-default item-button-right">
+                <h2>01-11 <span class="text-green">[明天]</span></h2>
+                <p class="text-gray"><span>星期三</span><span>共1项任务</span></p>
+                <button class="button button-outline button-theme button-item-local">
+                    添加计划
+                </button>
+            </div>
+            <div class="item item-title-divider">
+                高度为70px,右边有一个图标
+            </div>
+            <div class="item item-default item-button-right">
+                <h2>01-11 <span class="text-green">[明天]</span></h2>
+                <p class="text-gray"><span>星期三</span><span>共1项任务</span></p>
+                <div class="item-icon-only">
+                    <i class="ion-ios-arrow-right text-theme"></i>
+                </div>
+            </div>
+            <div class="item item-default item-button-right">
+                <h2>01-11 <span class="text-green">[明天]</span></h2>
+                <p class="text-gray"><span>星期三</span><span>共1项任务</span></p>
+                <div class="item-icon-only">
+                    <i class="ion-ios-more text-gray"></i>
+                </div>
+            </div>
+            <div class="item item-title-divider">
+                高度为70px,右边有两个按钮
+            </div>
+            <div class="item item-default item-button-right button-right-two">
+                <h2>01-11 <span class="text-green">[明天]</span></h2>
+                <p class="text-gray"><span>星期三</span><span>共1项任务</span></p>
+                <div class="item-group-btn">
+                    <button class="button button-theme button-outline button-item-local">删除</button>
+                    <button class="button button-theme button-item-local">修改</button>
+                </div>
+            </div>
+        </div>
+        <div class="item item-title-divider">
+            高度为70px,左边有头像右边有一个按钮
+        </div>
+        <div class="item item-avatar item-default item-button-right">
+            <img src="../assets/images/userface_0.png">
+            <h2>01-11 <span class="text-green">[明天]</span></h2>
+            <p class="text-gray"><span>星期三</span><span>共1项任务</span></p>
+            <button class="button button-outline button-theme button-item-local">
+                添加计划
+            </button>
+        </div>
+        <div class="item item-title-divider">
+            高度为90px,左边有头像，两段描述文字
+        </div>
+        <div class="item item-avatar item-default item-button-right more-pragraph">
+            <img src="../assets/images/userface_0.png">
+            <h2>01-11 <span class="text-green">[明天]</span></h2>
+            <p class="text-gray"><span>星期三</span><span>共1项任务</span></p>
+            <p class="text-gray"><span>星期三</span><span>共1项任务</span></p>
+            <button class="button button-outline button-theme button-item-local">
+                添加计划
+            </button>
+        </div>
+        <div class="list">
+            <div class="item item-title-divider">
+                item-title-divider
+            </div>
+            <div class="item item-default">
+                <h2>item-default</h2>
+                <p class="text-gray">高度<span class="text-theme">70px</span>;标题字号16px;描述性文字12px像素,字体颜色<span class="text-theme">#A0A0A0</span></p>
+            </div>
+            <div class="item item-default active">
+                <h2>active</h2>
+                <p class="text-gray">选中效果</p>
+            </div>
+            <div class="item item-default activated">
+                <h2>activated</h2>
+                <p class="text-gray">触摸效果</p>
+            </div>
+            <div class="item item-default left-border">
+                <h2>left-border</h2>
+                <p class="text-gray">左边框</p>
+            </div>
+        </div>
+        <div class="list">
+            <div class="item item-default">
+                <h2>文字两行截取text-overflow-two</h2>
+                <p class="text-gray text-overflow-two">描述性文字两行截取描述性文字两行截取描述性文字两行截取描述性文字两行截取描述性文字两行截取描述性文字两行截取描述性文字两行截取</p>
+            </div>
+        </div>
+        <div class="list">
+            <div class="item item-title-divider">
+                单选列表默认样式
+            </div>
+            <ion-list>
+                <ion-radio>单选 A</ion-radio>
+                <ion-radio class="radio-left">单选在左边 B</ion-radio>
+            </ion-list>
+            <div class="item item-title-divider">
+                多选列表默认样式
+            </div>
+            <ion-list>
+                <ion-checkbox>
+                    多选A
+                </ion-checkbox>
+            </ion-list>
+            <div class="item item-title-divider">
+                单选列表+缩略图
+            </div>
+            <ion-list>
+                <ion-radio class="item-avatar avatar-default">
+                    <img src="../assets/images/userface_0.png">
+                    <h2>杨晏</h2>
+                    <p><span>0000003</span><span>培训管理</span></p>
+                </ion-radio>
+                <ion-radio class="item-avatar radio-left avatar-default">
+                    <img src="../assets/images/userface_0.png">
+                    <h2>杨晏</h2>
+                    <p><span>0000003</span><span>培训管理</span></p>
+                </ion-radio>
+            </ion-list>
+            <div class="item item-title-divider">
+                多选列表+缩略图
+            </div>
+            <ion-list>
+                <ion-checkbox ng-model="filter.red" class="item-avatar avatar-default">
+                    <img src="../assets/images/userface_0.png">
+                    <h2>杨晏</h2>
+                    <p><span>0000003</span><span>培训管理</span></p>
+                </ion-checkbox>
+                <ion-checkbox ng-model="filter.yellow" class="item-avatar avatar-default">
+                    <img src="../assets/images/userface_0.png">
+                    <h2>杨晏</h2>
+                    <p><span>0000003</span><span>培训管理</span></p>
+                </ion-checkbox>
+            </ion-list>
+        </div>
+    </ion-content>
+</ion-view>

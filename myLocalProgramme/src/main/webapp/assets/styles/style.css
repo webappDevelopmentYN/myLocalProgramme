@@ -1,0 +1,254 @@
+/*css initial*/
+html,
+body,
+span,
+a,
+b,
+strong,
+s,
+label,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+div,
+ol,
+ul,
+li,
+dl,
+dt,
+dd {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Microsoft yahei';
+}
+ul,
+ol {
+  list-style: none;
+}
+/*common css*/
+.text-center {
+  text-align: center;
+}
+/*homepage css*/
+.page-header {
+  width: 100%;
+  height: 26px;
+}
+.page-header.header-gradient {
+  filter: alpha(opacity=100) progid:DXImageTransform.Microsoft.gradient(startcolorstr=purple, endcolorstr=rgba(128, 0, 128, 0.3), gradientType=0);
+  -ms-filter: alpha(opacity=100) progid:DXImageTransform.Microsoft.gradient(startcolorstr=purple, endcolorstr=rgba(128, 0, 128, 0.3), gradientType=0);
+  /*IE8*/
+  background: purple;
+  /* 一些不支持背景渐变的浏览器 */
+  background: -moz-linear-gradient(top, purple, rgba(128, 0, 128, 0.3));
+  background: -webkit-gradient(linear, 0 0, 0 bottom, from(purple), to(rgba(128, 0, 128, 0.3)));
+  background: -o-linear-gradient(top, purple, rgba(128, 0, 128, 0.3));
+}
+.page-content-wrapper .page-sidebar {
+  width: 260px;
+  background: #f9ebf6;
+  float: left;
+  margin-right: -100%;
+}
+.page-content-wrapper .page-content {
+  width: 100%;
+  float: left;
+}
+.page-content-wrapper .page-content .content {
+  margin-left: 260px;
+}
+.basic-infor {
+  text-align: center;
+}
+.basic-infor > img {
+  display: block;
+  max-width: 150px;
+  max-height: 150px;
+  overflow: hidden;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -o-border-radius: 50%;
+  margin: 50px auto 20px;
+  border: 5px solid #fff;
+}
+.basic-infor h4 {
+  margin: 10px 0;
+}
+.basic-infor h4 i {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-left: 5px;
+  background: url("../images/female.png") no-repeat;
+  background-size: cover;
+  vertical-align: middle;
+}
+.basic-infor p.tips {
+  color: #666;
+  margin-top: 5px;
+  font-size: 12px;
+}
+.sidebar-wrapper {
+  margin-top: 20px;
+}
+.sidebar-list-group > li {
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #d2d2d2;
+}
+.sidebar-list-group > li:first-child {
+  border-top-color: #d2d2d2;
+}
+.sidebar-list-group > li.active > a,
+.sidebar-list-group > li > a:hover {
+  background-color: #AA56AA;
+  color: #fff;
+}
+.sidebar-list-group > li > .sub-menu {
+  border-top: 1px solid #d2d2d2;
+}
+.sidebar-list-group > li > .sub-menu > li:first-child {
+  border-top: 1px solid #fff;
+}
+.sidebar-list-group > li > .sub-menu > li > a {
+  border-left: 4px solid transparent;
+  border-bottom: 1px solid #f9ebf6;
+  padding: 6px 5px 6px 1px;
+}
+.sidebar-list-group > li > .sub-menu > li > a:last-child {
+  border-bottom-color: transparent;
+}
+.sidebar-list-group > li > .sub-menu > li.active > a,
+.sidebar-list-group > li > .sub-menu > li:hover > a {
+  border-left-color: #AA56AA;
+  background-color: #fff;
+  color: #333;
+}
+.sidebar-list-group > li a {
+  display: block;
+  font-size: 12px;
+  color: #333;
+  text-decoration: none;
+}
+.sidebar-list-group > li > a {
+  padding: 6px 5px;
+}
+.sidebar-list-group li a > i.fa-star-o,
+.sidebar-list-group li > a > i.fa-angle-down {
+  float: right;
+  font-size: 16px;
+  margin-right: 5px;
+}
+.sidebar-list-group li > a > i.fa-angle-down {
+  font-size: 18px;
+  margin-right: 7px;
+}
+.sidebar-list-group li a > i.fa-star-o {
+  display: none;
+}
+.sidebar-list-group li a > i.fa-star-o:before {
+  content: "\f006";
+}
+.sidebar-list-group li a > i:hover.fa-star-o:before {
+  content: "\f005";
+}
+.sidebar-list-group > li:hover > a > i.fa-star-o,
+.sidebar-list-group > li .sub-menu > li:hover > a > i.fa-star-o {
+  display: block;
+}
+/*story*/
+.story {
+  padding: 10px 20px;
+}
+.story p {
+  text-indent: 2em;
+  font-size: 13.25px;
+  line-height: 20px;
+}
+.story .alert {
+  font-size: 10px;
+}
+.hot {
+  color: purple !important;
+}
+.red {
+  color: red!important;
+}
+/*cssTyped*/
+.cssTypedWrap {
+  background: black;
+  color: #fff;
+  font-size: 20px;
+}
+/* code for animated blinking cursor */
+.typed-cursor {
+  opacity: 1;
+  font-weight: 100;
+  -webkit-animation: blink 0.7s infinite;
+  -moz-animation: blink 0.7s infinite;
+  -ms-animation: blink 0.7s infinite;
+  -o-animation: blink 0.7s infinite;
+  animation: blink 0.7s infinite;
+}
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-ms-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-o-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/*=======================================================APP CSS=========================================================*/

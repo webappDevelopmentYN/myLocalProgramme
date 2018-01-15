@@ -1,0 +1,29 @@
+/*ztreeData*/
+//[
+//  {
+//    "id":"1",
+//    "name":"父节点1",
+//    "open":true,
+//    "children":[
+//      {"id":"11","name":"子节点1"},
+//      {"id":"12","name":"子节点2"},
+//      {"id":"13","name":"子节点3"}
+//    ]
+//  },
+//  {
+//    "id":"2",
+//    "name":"父节点2",
+//    "open":false,
+//    "children":[
+//      {"id":"21","name":"子节点1"},
+//      {"id":"22","name":"子节点2"},
+//      {"id":"23","name":"子节点3"}
+//    ]
+//  }
+//]
+
+[
+  {"optionKey":"1", "optionValue":"Canon in D"},
+  {"optionKey":"2", "optionValue":"Wind Song"},
+  {"optionKey":"3", "optionValue":"Wings"}
+]

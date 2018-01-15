@@ -1,0 +1,48 @@
+<!--angular test-->
+<ion-view>
+    <ion-header-bar class="bar-theme bar bar-header">
+        <div class="buttons">
+            <a class="button" type="button" href="#home">返回</a>
+        </div>
+    </ion-header-bar>
+    <ion-content>
+        <div ng-controller="parentCtrlOne">
+            <div class="item item-title-divider">
+                $broadcast,$emit,$on的区别
+            </div>
+            <a class="item item-default" ng-controller="childCtrl" ng-click="click()">
+                点击第一个父级Ctrl，查看源码和控制台，即可明白彼此之间的区别
+            </a>
+        </div>
+        <div class="item item-default" ng-controller="parentCtrlTwo" ng-click="clickTwo()">
+            点击第二个父级Ctrl,点上面的时候没我啥事
+        </div>
+        <p class="padding text-gray">
+            说明：从上面的实例中得到，$broadcast和$emit都可以传播或发送一个事件，$broadcast是本身和父作用域向下（子作用域）发送或传播，
+            $emit是本身和子作用域向上（父作用域）发送或传播，直至根作用域。$on是接受一个事件。当第一次点击事件发生时，$broadcast和$emit
+            分别发送事件出去，父作用域和子作用域立马分别接受事件(由外向内)；当第二次或更多次点击事件发生时，点击事件本身所在
+            作用域先接受到发送事件，然后相关父作用域和子作用域才依次接受事件（由内向外）。
+        </p>
+        <p class="padding text-gray">
+            注：本例仅做参考，在angularjs实例中，不推荐控制器之间进行嵌套
+        </p>
+        <div class="sign-photo-area">
+            <div class="sign-photo-group clearfix">
+                <div class="sign-photo-list photo-list" ng-click="preview()">
+                    <div class="status">50%</div>
+                    <div class="cancel" ng-click="delete($event)"><i class="ion-ios-minus"></i></div>
+                </div>
+                <div class="sign-photo-list photo-list">
+                    <div class="status">99%</div>
+                </div>
+                <div class="sign-photo-list photo-list">
+                    <div class="status">上传</div>
+                </div>
+                <div class="sign-photo-list photo-list"></div>
+                <div class="sign-photo-list photo-list"></div>
+                <div class="sign-photo-list take-photo">
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

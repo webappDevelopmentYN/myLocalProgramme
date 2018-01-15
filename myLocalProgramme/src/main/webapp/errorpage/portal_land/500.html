@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.thymeleaf.org ">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>噢~出错了！</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<div class="error-wrap">
+    <div class="page-header"></div>
+    <div class="error-content">
+        <div class="error-logo">
+            <!--<strong> SMEsis</strong>-->
+        </div>
+        <div class="error-main">
+            <!--500服务器报错-->
+            <img src="500.png" alt=""/>
+            <h4>正在努力升级中！系统将在<span><span id="timer">6</span>秒</span>后跳转到 <a href="/ynedut/login.htm">企业运营管理平台首页</a></h4>
+            <a class="btn theme" type="button" href="">立即跳转</a>
+    </div>
+    <!--<h1 th:text="#{error.title}">Your request cannot be processed <span>:(</span></h1>
+
+    <p th:text="#{error.subtitle}">Sorry, an error has occurred.</p>
+
+    <span th:text="#{error.status}">Status:</span>&nbsp;<span th:text="${error}"></span>&nbsp;(<span th:text="${error}"></span>)<br/>
+    <span th:if="${!#strings.isEmpty(message)}">
+        <span th:text="#{error.message}">Message:</span>&nbsp;<span th:text="${message}"></span><br/>
+    </span>-->
+
+</div>
+</div>
+<script th:inline="text">
+    /*<![CDATA[*/
+    var GOOG_FIXURL_LANG = '[[${#locale.language}]]', GOOG_FIXURL_SITE = location.host;
+    /*]]>*/
+</script>
+<script type="text/javascript" src="style.js"></script>
+</body>
+</html>

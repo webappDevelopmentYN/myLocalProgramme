@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>ztree 示例</title>
+    <link rel="stylesheet" href="../../lib/zTree/css/demo.css" type="text/css">
+    <link rel="stylesheet" href="../../lib/zTree/css/zTreeStyle/zTreeStyle.css"/>
+    <script type="text/javascript" src="../../lib/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="../../lib/zTree/js/jquery.ztree.core.min.js"></script>
+    <script type="text/javascript" src="../../lib/zTree/js/jquery.ztree.exhide.min.js"></script>
+    <script type="text/javascript" src="../../lib/zTree/js/jquery.ztree.exedit.min.js"></script>
+  <script type="text/javascript" src="main.js"> </script>
+  <script type="text/javascript">
+    <!--
+    var setting = {
+      view: {
+        addHoverDom: addHoverDom,
+        removeHoverDom: removeHoverDom,
+        selectedMulti: false
+      },
+      edit: {
+        enable: true,
+        editNameSelectAll: true,
+        showRemoveBtn: showRemoveBtn,
+        showRenameBtn: showRenameBtn
+      },
+      data: {
+        simpleData: {
+          enable: true
+        }
+      },
+      callback: {
+        beforeDrag: beforeDrag,
+        beforeEditName: beforeEditName,
+        beforeRemove: beforeRemove,
+        beforeRename: beforeRename,
+        onRemove: onRemove,
+        onRename: onRename
+      }
+    };
+
+//    function initNodes(){
+//      $.ajax({
+//        url:'ztreeData.json',
+//        type:'get',
+//        async:false,
+//        dataType:'json',
+//        success:function(){
+//          console.log('引入成功了');
+//          $('#test').html('引入成功了');
+//        }
+//      });
+//      $('#test').html('引入成功了');
+////      console.log('123');
+//    }
+//    initNodes();
+
+
+    var zNodes =[
+      {id:'1',name:'父节点1',open:'true',children:[
+        {id:'11',name:'子节点1'},
+        {id:'12',name:'子节点2'},
+        {id:'13',name:'子节点3'}
+      ]},
+      {id:'2',name:'父节点2',open:'false',children:[
+        {id:'21',name:'子节点1'},
+        {id:'22',name:'子节点2'},
+        {id:'23',name:'子节点3'}
+      ]}
+    ];
+    var log, className = "dark";
+    function beforeDrag(treeId, treeNodes) {
+      return false;
+    }
+    function beforeEditName(treeId, treeNode) {
+      className = (className === "dark" ? "":"dark");
+      showLog("[ "+getTime()+" beforeEditName ]&nbsp;&nbsp;&nbsp;&nbsp; " + treeNode.name);
+      var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+      zTree.selectNode(treeNode);
+      setTimeout(function() {
+        if (confirm("Start node '" + treeNode.name + "' editorial status?")) {
+          setTimeout(function() {
+            zTree.editName(treeNode);
+          }, 0);
+        }
+      }, 0);
+      return false;
+    }
+    function beforeRemove(treeId, treeNode) {
+      className = (className === "dark" ? "":"dark");
+      showLog("[ "+getTime()+" beforeRemove ]&nbsp;&nbsp;&nbsp;&nbsp; " + treeNode.name);
+      var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+      zTree.selectNode(treeNode);
+      return confirm("Confirm delete node '" + treeNode.name + "' it?");
+    }
+    function onRemove(e, treeId, treeNode) {
+      showLog("[ "+getTime()+" onRemove ]&nbsp;&nbsp;&nbsp;&nbsp; " + treeNode.name);
+    }
+    function beforeRename(treeId, treeNode, newName, isCancel) {
+      className = (className === "dark" ? "":"dark");
+      showLog((isCancel ? "<span style='color:red'>":"") + "[ "+getTime()+" beforeRename ]&nbsp;&nbsp;&nbsp;&nbsp; " + treeNode.name + (isCancel ? "</span>":""));
+      if (newName.length == 0) {
+        setTimeout(function() {
+          var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+          zTree.cancelEditName();
+          alert("Node name can not be empty.");
+        }, 0);
+        return false;
+      }
+      return true;
+    }
+    function onRename(e, treeId, treeNode, isCancel) {
+      showLog((isCancel ? "<span style='color:red'>":"") + "[ "+getTime()+" onRename ]&nbsp;&nbsp;&nbsp;&nbsp; " + treeNode.name + (isCancel ? "</span>":""));
+    }
+    function showRemoveBtn(treeId, treeNode) {
+      return !treeNode.isFirstNode;
+    }
+    function showRenameBtn(treeId, treeNode) {
+      return !treeNode.isLastNode;
+    }
+    function showLog(str) {
+      if (!log) log = $("#log");
+      log.append("<li class='"+className+"'>"+str+"</li>");
+      if(log.children("li").length > 8) {
+        log.get(0).removeChild(log.children("li")[0]);
+      }
+    }
+    function getTime() {
+      var now= new Date(),
+        h=now.getHours(),
+        m=now.getMinutes(),
+        s=now.getSeconds(),
+        ms=now.getMilliseconds();
+      return (h+":"+m+":"+s+ " " +ms);
+    }
+
+    var newCount = 1;
+    function addHoverDom(treeId, treeNode) {
+      var sObj = $("#" + treeNode.tId + "_span");
+      if (treeNode.editNameFlag || $("#addBtn_"+treeNode.tId).length>0) return;
+      var addStr = "<span class='button add' id='addBtn_" + treeNode.tId
+        + "' title='add node' onfocus='this.blur();'></span>";
+      sObj.after(addStr);
+      var btn = $("#addBtn_"+treeNode.tId);
+      if (btn) btn.bind("click", function(){
+        var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+        zTree.addNodes(treeNode, {id:(100 + newCount), pId:treeNode.id, name:"新子节点" + (newCount++)});
+        return false;
+      });
+    };
+    function removeHoverDom(treeId, treeNode) {
+      $("#addBtn_"+treeNode.tId).unbind().remove();
+    };
+    function selectAll() {
+      var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+      zTree.setting.edit.editNameSelectAll =  $("#selectAll").attr("checked");
+    }
+
+    $(document).ready(function(){
+//      $('#test').click(function(){
+////        console.log('123');
+//        $.ajax({
+//          type:'GET',
+//          url:'ztree.json',
+//          dataType:'json',
+//          success:function(data){
+//            console.log('进来了');
+//            var song="<ul>";
+//            $.each(data,function(i,n){
+//              //获取对象中属性为optionsValue的值
+//              song+="<li>"+n["optionValue"]+"</li>";
+//            });
+//            song+="</ul>";
+//            $('#result').append(song);
+//          }
+//        });
+//      });
+      $.fn.zTree.init($("#treeDemo"), setting, zNodes);
+      $("#selectAll").bind("click", selectAll);
+
+    });
+    //-->
+  </script>
+  <style type="text/css">
+    .ztree li span.button.add {margin-left:2px; margin-right: -1px; background-position:-144px 0; vertical-align:top; *vertical-align:middle}
+  </style>
+</head>
+<body>
+  <div>
+    <input type="button" id="button" value="确定" />
+    <div id="result"></div>
+    <!--<ul id="treeDemo" class="ztree"></ul>-->
+  </div>
+</body>
+</html>

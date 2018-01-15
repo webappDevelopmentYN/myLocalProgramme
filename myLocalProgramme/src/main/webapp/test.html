@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>一个web前端开发女神经的日常</title>
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="assets/styles/style.css"/>
+</head>
+<body>
+    <div class="page-header header-gradient"></div>
+    <div class="page-content-wrapper">
+        <div class="page-sidebar" style="min-height: 1000px;">
+            <!--basic infor-->
+            <div class="basic-infor">
+                <img src="assets/images/my.jpg" alt="Rosalyn Wu" width="150"/>
+                <h4><strong>吴海英</strong><i></i></h4>
+                <p>web前端开发工程师</p>
+                <p class="tips">备注：一个介女神和女汉子之间的女神经</p>
+                <p class="tips">邮箱：yulin990422@126.com</p>
+            </div>
+            <!--menu-->
+            <div class="sidebar-wrapper">
+                <div class="sidebar">
+                    <ul class="sidebar-list-group">
+                        <li class="sidebar-list-item">
+                            <a href="javascript:;">首页<i class="fa fa-star-o"></i></a>
+                        </li>
+                        <li class="sidebar-list-item">
+                            <a href="javascript:;" ui-sref="story" ui-sref-active="active">小故事（驴子和马）<i class="fa fa-star-o"></i></a>
+                        </li>
+                        <li class="sidebar-list-item">
+                            <a href="javascript:;">基本样式库<i class="fa fa-star-o"></i></a>
+                        </li>
+                        <li class="sidebar-list-item">
+                            <a href="javascript:;">奇葩库<i class="fa fa-angle-down"></i></a>
+                            <ul class="sub-menu">
+                                <li><a href="javascript:;" ui-sref="cssTyped" ui-sref-active="active">cssTyped<i class="fa fa-star-o"></i></a></li>
+                                <li><a href="javascript:;" ui-sref="suspension" ui-sref-active="active">悬浮框<i class="fa fa-star-o"></i></a></li>
+                                <li><a href="">子菜单2<i class="fa fa-star-o"></i></a></li>
+                                <li><a href="">子菜单3<i class="fa fa-star-o"></i></a></li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-list-item active">
+                            <a href="">有子菜单<i class="fa fa-angle-down"></i></a>
+                            <ul class="sub-menu">
+                                <li class="active"><a href="">子菜单1<i class="fa fa-star-o"></i></a></li>
+                                <li><a href="">子菜单2<i class="fa fa-star-o"></i></a></li>
+                                <li><a href="">子菜单3<i class="fa fa-star-o"></i></a></li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-list-item">
+                            <a href="javascript:;">没得子菜单<i class="fa fa-star-o"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="page-content">
+            <div class="content">
+                <div ui-view></div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-ui-router/js/angular-ui-router.js"></script>
+    <script type="text/javascript" src="assets/scripts/lib/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="components/cssTyped/typed.min.js"></script>
+    <script type="text/javascript" src="assets/scripts/web.directive.js"></script>
+    <!--componentJs start-->
+    <!--typed js-->
+    <script type="text/javascript" src="assets/scripts/componentJs/typed.js"></script>
+
+    <!--suspension js-->
+    <script type="text/javascript" src="components/suspension/suspension.directive.js"></script>
+    <script type="text/javascript" src="assets/scripts/componentJs/suspensionJs.js"></script>
+
+    <!--componentJs end-->
+</body>
+</html>
