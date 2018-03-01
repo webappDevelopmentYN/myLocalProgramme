@@ -1,0 +1,10 @@
+<div ng-controller="myCtrl">
+    <button ng-click="n={open:true}">悬浮框</button>
+    <bubble ng-if="n.open" close="n.open=false">
+        这是新悬浮下拉框，以下内容通过遍历展示
+        <button ng-click="clickTest()">按钮</button>
+        <ul>
+            <li ng-repeat="item in array" ng-click="clickTest()">{{item}}</li>
+        </ul>
+    </bubble>
+</div>

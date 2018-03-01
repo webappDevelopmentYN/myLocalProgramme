@@ -1,43 +1,20 @@
 <!--冒泡 提示框-->
-<div ng-controller="myCtrl">
-        <button class="btn btn-default " ui-bubble default-config="config">
-            提示在上
-        </button>
-    <div class="btn btn-default" ui-bubble default-config="config1">提示在下</div>
-    <button class="btn btn-default">提示在左</button>
-    <button class="btn btn-default">提示在右</button>
-    <!--<div class="ui-popup ui-popup-top ui-popup-anchor">-->
-    <!--<div class="ui-bubble">-->
-    <!--<div class="ui-bubble-content">-->
-    <!--提示在上-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--<div class="ui-popup ui-popup-bottom ui-popup-anchor">-->
-    <!--<div class="ui-bubble">-->
-    <!--<div class="ui-bubble-content">-->
-    <!--提示在下-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--<div class="ui-popup ui-popup-left ui-popup-anchor">-->
-    <!--<div class="ui-bubble">-->
-    <!--<div class="ui-bubble-content">-->
-    <!--提示在左-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--<div class="ui-popup ui-popup-right ui-popup-anchor">-->
-    <!--<div class="ui-bubble">-->
-    <!--<div class="ui-bubble-content">-->
-    <!--提示在右-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--</div>-->
+<div ng-controller="myCtrl" style="margin-top: 200px;">
+        <!--<button class="btn btn-default " ui-bubble default-config="config">-->
+            <!--提示宽度很宽，左边内容不足，放右边-->
+        <!--</button>-->
+    <button class="btn btn-default"  ui-bubble default-config="config2">
+        提示内容过高，且上方空间不足，默认展示在下方
+    </button>
+    <!--<button class="btn btn-default pull-right"  ui-bubble default-config="config">-->
+        <!--提示宽度很宽，左边内容不足，放左边-->
+    <!--</button>-->
+    <div>
+        <button class="btn" ng-click="clickFun()">这里面也是个点击事件</button>
+    </div>
 <textarea class="h-light">
         <!--按钮组-->
         <button class="btn btn-theme">theme按钮</button>
-    </textarea>
-
+</textarea>
 </div>
 
