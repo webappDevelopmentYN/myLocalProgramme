@@ -1,10 +1,40 @@
 <div ng-controller="myCtrl">
-    <button ng-click="n={open:true}">悬浮框</button>
-    <bubble ng-if="n.open" close="n.open=false">
+    <button bubbleaction="mouseover" bubbleid="1">悬浮框1</button>
+    <bubble bubbleid="1">
         这是新悬浮下拉框，以下内容通过遍历展示
         <button ng-click="clickTest()">按钮</button>
         <ul>
             <li ng-repeat="item in array" ng-click="clickTest()">{{item}}</li>
         </ul>
     </bubble>
+    <div style="margin-top: 550px; float: right;">
+        <button bubbleaction="click" bubbleid="2">悬浮框2</button>
+        <bubble bubbleid="2">
+            这是新悬浮下拉框，以下内容通过遍历展示
+            <button ng-click="clickTest()">按钮</button>
+            <ul>
+                <li ng-repeat="item in array" ng-click="clickTest()">{{item}}</li>
+            </ul>
+        </bubble>
+    </div>
+    <div >
+        <button style="float: right" bubbleaction="click" bubbleid="3">悬浮框3</button>
+        <bubble bubbleid="3">
+            这是新悬浮下拉框，以下内容通过遍历展示3
+            <button ng-click="clickTest()">按钮</button>
+            <ul>
+                <li ng-repeat="item in array" ng-click="clickTest()">{{item}}</li>
+            </ul>
+        </bubble>
+    </div>
+    <div >
+        <button style="margin-top: 400px" bubbleaction="click" bubbleid="4">悬浮框4</button>
+        <bubble bubbleid="4">
+            这是新悬浮下拉框，以下内容通过遍历展示4
+            <button ng-click="clickTest()">按钮</button>
+            <ul>
+                <li ng-repeat="item in array" ng-click="clickTest()">{{item}}</li>
+            </ul>
+        </bubble>
+    </div>
 </div>

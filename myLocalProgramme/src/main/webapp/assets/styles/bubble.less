@@ -55,15 +55,28 @@
     }
   }
 }
-.ui-popup-left,.ui-popup-right{
+.ui-popup-left-top,.ui-popup-left-bottom,.ui-popup-right{
   .ui-bubble{
     &:before,&:after{
-      top: 10px;
       margin-top: -5px;
     }
   }
 }
-.ui-popup-left{
+.ui-popup-left-top{
+  .ui-bubble{
+    &:before,&:after{
+      bottom: 2px;
+    }
+  }
+}
+.ui-popup-left-bottom{
+  .ui-bubble{
+    &:before,&:after{
+      top: 8px;
+    }
+  }
+}
+.ui-popup-left-top,.ui-popup-left-bottom{
   .ui-bubble{
     &:before{
       right: -10px;
@@ -77,6 +90,9 @@
 }
 .ui-popup-right{
   .ui-bubble{
+    &:before,&:after{
+      top: 10px;
+    }
     &:before{
       left: -10px;
       border-right: 5px solid #cd9c4f;

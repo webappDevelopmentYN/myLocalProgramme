@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>example</title>
 
+    <script src="../../../assets/scripts/jquery-1.11.1.min.js"></script>
     <script src="../node_modules/angular/angular.min.js"></script>
     <script src="../dist/angular-popups.js"></script>
 
     <script>
     angular.module('examples', ['angular-popups']);
     </script>
-
     <link rel="stylesheet" href="./css/show-source-code.css">
     <style>
         #follow-elem {
@@ -87,9 +87,9 @@
         }
     </style>
 </head>
-<body>
+<body ng-controller="myCtrl">
 <div id="follow-elem">
-    <input ng-click="nw={open:true}" name="btn" type="radio" value="top left" class="nw" title="top left">
+    <input ng-click="nw.open=true;nw.nwClick()" name="btn" type="radio" class="nw" title="top left">
     <input ng-click="n={open:true}" name="btn" type="radio" value="top" class="n" title="top">
     <input ng-click="ne={open:true}" name="btn" type="radio" value="top right" class="ne" title="top right">
     <input ng-click="en={open:true}" name="btn" type="radio" value="right top" class="en" title="right top">
@@ -103,7 +103,12 @@
     <input ng-click="wn={open:true}" name="btn" type="radio" value="left top" class="wn" title="left top">
 </div>
 
-<bubble ng-if="nw.open" for="follow-elem" align="top left" close="nw.open=false">hello world</bubble>
+<bubble ng-if="nw.open" for="follow-elem" align="top left" close="nw.open=false" id="popup-id">
+    <button ng-click="test()">点击我看看有没事件发生</button>
+    <ul>
+        <li ng-repeat="item in itemObj" ng-click="test()">{{item}}</li>
+    </ul>
+</bubble>
 <bubble ng-if="n.open" for="follow-elem" align="top" close="n.open=false">hello world</bubble>
 <bubble ng-if="ne.open" for="follow-elem" align="top right" close="ne.open=false">hello world</bubble>
 <bubble ng-if="en.open" for="follow-elem" align="right top" close="en.open=false">hello world</bubble>
@@ -116,5 +121,6 @@
 <bubble ng-if="w.open" for="follow-elem" align="left" close="w.open=false">hello world</bubble>
 <bubble ng-if="wn.open" for="follow-elem" align="left top" close="wn.open=false">hello world</bubble>
 <script id="show-source-code" src="./js/show-source-code.js"></script>
+<script src="./js/test.js"></script>
 </body>
 </html>
