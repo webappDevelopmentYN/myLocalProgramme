@@ -14,7 +14,7 @@
 <div ng-controller="myCtrl">
     <div data-ng-init="load()">123</div>
     <button class="button" ng-click="click($event)">按钮</button>
-    <div style=" display:inline-block;width:100px; height:150px; position:relative; overflow:hidden; background:#996699;"><img class="pic" src="../../assets/images/bg1.jpg" onload="resizeImgNew(this,100,150)" /></div>
+    <div style=" display:inline-block;width:100px; height:150px; position:relative; overflow:hidden; background:#996699;"><img class="pic" src="../../assets/images/bg1.jpg" onload="resize_img(this,100,150)" /></div>
     <!--<div style=" display:inline-block;width:100px; height:150px; position:relative; overflow:hidden; background:#996699;"><img class="pic" src="../../assets/images/bg2.jpg" data-ng-init="resizeImgNew(this,100,150)" /></div>-->
     <!--<div style=" display:inline-block;width:100px; height:150px; position:relative; overflow:hidden; background:#996699;"><img class="pic" src="../../assets/images/bg3.jpg" data-ng-init="resizeImgNew(this,100,150)" /></div>-->
     <!--<div style=" display:inline-block;width:100px; height:150px; position:relative; overflow:hidden; background:#996699;"><img class="pic" src="../../assets/images/bg4.jpg" data-ng-init="resizeImgNew(this,100,150)" /></div>-->
@@ -23,9 +23,11 @@
     <!--<div style=" display:inline-block;width:100px; height:150px; position:relative; overflow:hidden; background:#996699;"><img class="pic" src="../../assets/images/my.jpg" data-ng-init="resizeImgNew(this,100,150)" /></div>-->
 </div>
 <script type="text/javascript">
+    //100,150
     function resize_img(pic,w,h){//参数
         var re_new_size=function(r){
             //根据比率重新计算宽度
+            console.log(r);
             return {w:pic.width/r,h:pic.height/r};
         };
         var re_offset=function(n){
