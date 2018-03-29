@@ -13,6 +13,21 @@ $white-color: #fff;
 $font-size: 12px;
 $opacity-white :rgba(255,255,255,0.5);
 $opacity-black :rgba(0,0,0,0.5);
+$padding:(1px 2px)(5px 6px);
+$padding-1:(1px,);
+$padding-3:(1px 2px 3px,);
+
+
+@mixin firebox-message($selector){
+  body.firebox #{$selector}:before{
+    content: 'hello';
+  }
+  .font-defined #{$selector}{
+    font-size: 30px;
+  }
+}
+@include firebox-message('.header');
+@include firebox-message('.font-size');
 body{
   background-color: $bg-color;
   font-size: $font-size;
@@ -37,5 +52,108 @@ body{
   background-color: transparentize($opacity-black,0.25);
   filter: progid:DXImageTransform.Microsoft.gradient(enabled='false', startColorstr='#{ie-hex-str($opacity-black)}', endColorstr='#{ie-hex-str(transparentize($opacity-black,0.25))}');
 }
+.padding{
+  padding: $padding;
+};
+.padding-1{
+  padding: $padding-1;
+}
+.padding-3{
+  padding: $padding-3;
+}
+
+
+$arr:(
+                (theme: dark, size: 40px),
+                (theme: light, size:32px)
+);
+@for $i from 1 through length($arr){
+  $item: nth($arr, $i);
+  .#{map_get($item,theme)}{
+    width: map_get($item,size);
+    height: map_get($item,size);
+  }
+}
+
+$arr1:(
+                (name:name1,theme: $theme-color, size: 5px),
+                (name:name2,theme: lighten($theme-color,5%), size: 2px),
+                (name:name3,theme: lighten($theme-color,20%), size: 5px),
+                (name:name4,theme: lighten($theme-color,30%), size: 8px)
+);
+@for $i from 1 to length($arr1){
+  $item :nth($arr1,$i);
+ .#{map_get($item,name)}{
+    background-color: map_get($item,theme);
+    padding: map_get($item,size);
+ }
+}
+
+$name: 'aa', 'bb';
+@each $i in $name{
+  div.#{$i}{
+    width:100px;
+  }
+}
+
+$name1:(name1:'span',name2:'div');
+@each $i in $name1{
+  .#{$i}{
+    width: 20px;
+  }
+}
+
+$name2:(name11:2,name22:3);
+@each $key, $value in $name2{
+  .#{$key}{
+    width:20px * $value;
+  }
+}
+
+$ii: 2;
+@while $ii > 0{
+  .color#{$ii}{
+    color: #222 * $ii;
+  }
+  $ii:$ii - 1;
+}
+
+$width1: 100px;
+$width2: 200px;
+div.width{
+  @if $width2 > $width1{
+    width: $width1;
+  }
+}
+
+.cc{
+  margin: 0 auto;
+  color: red;
+}
+.dd{
+  @extend .cc;
+}
+.ee{
+  @extend .ff!optional;
+}
+
+@mixin gg{
+  margin: 10px;
+}
+.hh{
+  @include gg;
+}
+$margin: 100px;
+$left: 10px;
+@mixin aa($left, $margin){
+  margin: $margin;
+  left: $left;
+}
+.ii{
+  @include aa($left, $margin);
+}
+
+
+
 
 

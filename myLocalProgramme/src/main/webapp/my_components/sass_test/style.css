@@ -5,6 +5,18 @@
   margin: 0;
   padding: 0; }
 
+body.firebox .header:before {
+  content: 'hello'; }
+
+.font-defined .header {
+  font-size: 30px; }
+
+body.firebox .font-size:before {
+  content: 'hello'; }
+
+.font-defined .font-size {
+  font-size: 30px; }
+
 body {
   background-color: #f5f5f5;
   font-size: 12px; }
@@ -25,5 +37,72 @@ body {
   color: black;
   background-color: rgba(0, 0, 0, 0.25);
   filter: progid:DXImageTransform.Microsoft.gradient(enabled='false', startColorstr='#80000000', endColorstr='#40000000'); }
+
+.padding {
+  padding: 1px 2px 5px 6px; }
+
+.padding-1 {
+  padding: 1px; }
+
+.padding-3 {
+  padding: 1px 2px 3px; }
+
+.dark {
+  width: 40px;
+  height: 40px; }
+
+.light {
+  width: 32px;
+  height: 32px; }
+
+.name1 {
+  background-color: #12b5b0;
+  padding: 5px; }
+
+.name2 {
+  background-color: #14ccc7;
+  padding: 2px; }
+
+.name3 {
+  background-color: #41ece7;
+  padding: 5px; }
+
+div.aa {
+  width: 100px; }
+
+div.bb {
+  width: 100px; }
+
+.name1 span {
+  width: 20px; }
+
+.name2 div {
+  width: 20px; }
+
+.name11 {
+  width: 40px; }
+
+.name22 {
+  width: 60px; }
+
+.color2 {
+  color: #444444; }
+
+.color1 {
+  color: #222222; }
+
+div.width {
+  width: 100px; }
+
+.cc, .dd {
+  margin: 0 auto;
+  color: red; }
+
+.hh {
+  margin: 10px; }
+
+.ii {
+  margin: 100px;
+  left: 10px; }
 
 /*# sourceMappingURL=style.css.map */
