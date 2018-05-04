@@ -20,6 +20,10 @@ angular.module('docApp',['ui.router'])
             .state('img_resize_auto',{
                 url: "/img_resize_auto",
                 templateUrl: 'templates/img_resize_auto.html'
+            })
+            .state('ro_dropdown',{
+                url: "/ro_dropdown",
+                templateUrl: 'templates/ro_dropdown.html'
             });
     })
     .controller('myCtrl',['$scope',function($scope){

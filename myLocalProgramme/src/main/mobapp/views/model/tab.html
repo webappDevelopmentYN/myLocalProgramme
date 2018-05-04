@@ -1,5 +1,8 @@
 <ion-view>
     <ion-content>
+        <div class="list">
+            <div class="item item-title-divider">说明：page-tabs 高度为40px，文字为16px，宽度自适应</div>
+        </div>
         <!--模仿tabs-->
         <div class="page-tabs page-tabs-color-theme">
             <a class="tab-item active">
@@ -13,7 +16,21 @@
             </a>
         </div>
         <div class="list">
-            <div class="item item-title-divider">说明：page-tabs 高度为40px，文字为16px，宽度自适应</div>
+            <div class="item item-title-divider">说明：page-tabs 高度为40px，文字为16px，居中显示且带后退按钮</div>
+        </div>
+        <div class="page-tabs page-tabs-color-theme page-tabs-center page-tabs-btn">
+            <button class="button button-theme">
+                <i class="icon ion-android-close"></i>
+            </button>
+            <a class="tab-item active">
+                Home
+            </a>
+            <a class="tab-item">
+                Favorites
+            </a>
+            <a class="tab-item">
+                Settings
+            </a>
         </div>
     </ion-content>
 </ion-view>

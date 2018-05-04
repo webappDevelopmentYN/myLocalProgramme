@@ -903,6 +903,30 @@ h2.word-break {
   color: #6299e9;
   border-bottom-color: #4684e8;
 }
+.page-tabs.page-tabs-center .tab-item {
+  webkit-box-flex: initial;
+  -webkit-flex: initial;
+  -moz-box-flex: initial;
+  -moz-flex: initial;
+  -ms-flex: initial;
+  flex: initial;
+  margin: 0 5px;
+}
+.page-tabs.page-tabs-btn {
+  padding-left: 40px;
+  padding-right: 40px;
+  position: relative;
+}
+.page-tabs.page-tabs-btn .button {
+  min-height: 40px;
+  height: 40px;
+}
+.page-tabs.page-tabs-btn .button:first-child {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10;
+}
 /**
 * fixed-header
 */
